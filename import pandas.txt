@@ -1,0 +1,11 @@
+import pandas 
+  
+  
+data = pandas.read_excel(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\reporteGirosPagados.xls") 
+  
+filtro= [9000395338,900039533]
+
+#AlertOpen = data.loc[data['Documento Remi.'] ==filtro]
+filtrado= data[data['Documento Remi.'].isin(filtro)]
+print(filtrado)
+filtrado.to_excel(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\reporte.xls")

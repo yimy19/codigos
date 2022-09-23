@@ -1,0 +1,49 @@
+import pandas as Pd
+
+from openpyxl import workbook
+
+
+
+
+Productos = ['BETPLAY',
+
+'CARTERA INDIRECTA',
+
+'CARTERA DIRECTA',
+
+'ADULTO MAYOR',
+
+'LINEA BUSES',
+
+'RECARGAS GANA',
+
+'INGRESO SOLIDARIO',
+
+'GIROS',
+
+'ANULACIÓN GIROS',
+
+'ANULACIÓN EPM',
+
+'RIS']
+
+
+
+
+for x in Productos:
+ FileAlertasControl = Pd.read_excel(r"‪C:\Users\aprendiz.automatiza\Desktop\Consolidado automatización de alertas.xlsx",sheet_name= x,header=0)
+
+Data = Pd.DataFrame(FileAlertasControl)
+
+   
+  
+
+print("______________________________________")
+
+print('|              '+x+'          |')
+
+print("______________________________________")
+
+print("----------------------------------------------------------------------")
+
+print(Data)

@@ -1,0 +1,6 @@
+import cryptocode
+
+str_encoded = cryptocode.encrypt("I am okay","wow")
+## And then to decode it:
+str_decoded = cryptocode.decrypt(str_encoded, "wow")
+print(str_decoded)

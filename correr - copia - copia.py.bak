@@ -1,0 +1,20 @@
+import pandas
+from openpyxl import workbook
+  
+data = pandas.read_excel(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\reportePagos.xls") 
+dfdata =  pandas.DataFrame(data)
+print (len(dfdata))
+str.encode('UTF-8')
+nuevo = pandas.read_excel(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\historico\adulto\reportehistorico.xlsx")
+dfdata1 =  pandas.DataFrame(nuevo)
+print (dfdata1)
+print (len(dfdata1))
+
+
+historico = pandas.concat([dfdata1,dfdata]) 
+historico.to_excel(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\historico\adulto\reportehistorico.xlsx",sheet_name='Hoja 1')
+print (len(historico))
+wb = load_workbook(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\historico\adulto\reportehistorico.xlsx")
+hoja = wb.active
+hoja.delete_cols(1)
+wb.save(r"C:\Users\aprendiz.automatiza\Desktop\bot subsidios del estado\historico\adulto\reportehistorico.xlsx")
